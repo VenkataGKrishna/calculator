@@ -8,10 +8,9 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-        ConnectionType: 'AzureRM'
-        azureSubscription: 'Mysubscription'
-        appType: 'webApp'
-        WebAppName: 'vk-myapp1'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    azureSubscription: 'new-connection'
+    appType: 'webAppLinux'
+    appName: 'vk-myapp1'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
