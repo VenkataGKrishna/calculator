@@ -11,7 +11,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure subscription 1(33471032-2c6d-497e-ae43-6659f54956af)'
+        azureSubscription: 'Mysubscription'
         appType: 'webApp'
-        WebAppName: 'webcalculator-app'
+        WebAppName: 'vk-myapp1'
         packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
