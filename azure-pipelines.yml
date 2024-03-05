@@ -8,9 +8,10 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
-    azureSubscription: 'Azure-project'
-    appType: 'webAppLinux'
-    appName: 'webcalculator-app'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure subscription 1(33471032-2c6d-497e-ae43-6659f54956af)'
+        appType: 'webApp'
+        WebAppName: 'webcalculator-app'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
